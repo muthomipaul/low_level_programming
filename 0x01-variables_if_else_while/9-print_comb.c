@@ -19,6 +19,7 @@ int main(void)
 		}
 		i++;
 	} while (i < 10);
+	putchar(' ');
 	return (0);
 }
 
