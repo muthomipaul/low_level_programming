@@ -2,7 +2,7 @@
 #include <strings.h>
 /**
  * main - Entry point
- * main - prints Programming is like building a multilingual puzzle and a new line 
+ * main - prints Programming is like building a multilingual puzzle
  * Return: returns zero if successful
  */
 int main(void)
