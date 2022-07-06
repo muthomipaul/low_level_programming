@@ -10,7 +10,13 @@
  */
 int main(void)
 {
-	print_alphabet();
+	char lowerCase;
+
+	for (lowerCase = 'a'; lowerCase <= 'z'; lowerCase++)
+	{
+		_putchar(lowerCase);
+	}
+	_putchar('\n');
 	return (0);
 }
 
