@@ -4,7 +4,6 @@
 
 int _putchar();
 
-// ---print_alphabet function
 void print_alphabet(void)
 {	
 	char lowerCase;
@@ -15,6 +14,6 @@ void print_alphabet(void)
 	}
 	_putchar('\n');	
 }
-// ------------------------
+
 void print_alphabet(void);
 #endif
