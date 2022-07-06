@@ -4,7 +4,7 @@
 #include "main.h"
 
 /**
- * main - Entry Point
+ * print_alphabet - Entry Point
  * Main function for printing the alphabet
  * Return: Always
  */
