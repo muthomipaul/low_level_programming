@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdio.h>
 #include "main.h"
-/**DbdBfgnzf
+/**
  * print_alphabet_x10 - Entry Point
  * Main function for printing the alphabet ten times
  * Return: Always
@@ -18,7 +18,7 @@ void print_alphabet_x10(void)
 		{
 			_putchar(lowerCase);
 		}
+		_putchar('\n');
 	}
-	_putchar('\n');
 }
 
