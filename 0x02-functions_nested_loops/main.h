@@ -1,17 +1,7 @@
 #ifndef HEADER
 #define HEADER
+#include <unistd.h>
 
-int _putchar(void)
-{
-	int i;
-	
-	char n[8] = "_putchar";
-	for (i = 0; i < 8; i++)
-	{
-		printf("%c", n[i]);
-	}
-	printf("\n");
-	return (0);
-}
+int _putchar();
+void print_alphabet(void);
 #endif
-
