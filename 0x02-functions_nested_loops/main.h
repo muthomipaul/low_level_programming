@@ -3,8 +3,10 @@
 
 int _putchar(void)
 {
+	int i;
+
 	char n[8] = "_putchar";
-	for (int i = 0; i < 8; i++)
+	for (i = 0; i < 8; i++)
 	{
 		printf("%c", n[i]);
 	}
