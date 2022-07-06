@@ -8,7 +8,7 @@
  * Main function for printing the alphabet
  * Return: Always
  */
-int main(void)
+void print_alphabet(void)
 {
 	char lowerCase;
 
@@ -17,6 +17,7 @@ int main(void)
 		_putchar(lowerCase);
 	}
 	_putchar('\n');
+	/*print_alphabet(); */
 	return (0);
 }
 
