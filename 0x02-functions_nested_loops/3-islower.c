@@ -5,13 +5,15 @@
 
 /**
  * _islower - Entry Point
- * c - checking lower case
+ * @c:  checking lower case
  * Main function for checking lower case
  * Return: Always
  */
 int _islower(int c)
 {
-	if (islower(c) > 0)
+	int letter = islower(c);
+
+	if (letter > 0)
 	{
 		return (1);
 	} else
