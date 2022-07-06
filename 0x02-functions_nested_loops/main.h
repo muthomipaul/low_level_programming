@@ -10,4 +10,5 @@ int _abs(int);
 int print_last_digit(int);
 int add(int, int);
 int _isalpha(int c);
+int print_sign(int n);
 #endif
