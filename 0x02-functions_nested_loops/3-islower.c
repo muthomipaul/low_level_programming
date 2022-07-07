@@ -11,14 +11,15 @@
  */
 int _islower(int c)
 {
-	int letter = islower(c);
+	int i;
 
-	if (letter > 0)
+	for (i = 'a'; i <= 'z'; i++)
 	{
-		return (1);
-	} else
-	{
-		return (0);
+		if (c == i)
+		{
+			return (1);
+		}
 	}
+	return (0);
 }
 
