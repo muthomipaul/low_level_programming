@@ -4,19 +4,25 @@
 #include "main.h"
 
 /**
- * main - Entry Point
+ * _isalpha - Entry Point
  * @c: number c
  * _isalpha function for checking alphanumerical number
  * Return: Always
  */
 int _isalpha(int c)
 {
-	if (isalpha(c) > 0)
+	int i;
+
+	for (i = 'a'; i <= 'z'; i++)
 	{
-		return (1);
-	} else
-	{
-		return (0);
+		if (c == i)
+			return (1);
 	}
+	for (i = 'A'; i <= 'Z'; i++)
+	{
+		if (c == i)
+			return (1);
+	}
+	return (0);
 }
 
