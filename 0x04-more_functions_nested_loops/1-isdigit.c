@@ -9,16 +9,17 @@
  * Main function for prints the last digit of a number
  * Return: Always
  */
-
 int _isdigit(int c)
 {
-	if (isdigit(c))
+	int i;
+
+	for (i = '0'; i <= '9'; i++)
 	{
-		return (1);
+		if (c == i)
+		{
+			return (1);
+		}
 	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }
 
