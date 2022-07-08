@@ -1,0 +1,28 @@
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+#include "main.h"
+
+/**
+ * main - Entry Point
+ * function for printing largest prime factor of the number 612852475143
+ * Return: Always
+ */
+
+int main(void)
+{
+	unsigned long num = 612852475143;
+	unsigned long div = 2;
+
+	while (div < num)
+	{
+		if (num % div == 0)
+			num /= div++;
+		else
+			div++;
+	}
+
+	printf("%lu\n", num);
+
+		return (0);
+}
