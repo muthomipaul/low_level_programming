@@ -4,10 +4,8 @@
 #include "main.h"
 
 /**
- * mul - Entry Point
- * @a: number a
- * @b: number b
- * function for multiplying two numbers
+ * print_numbers - Entry Point
+ * function for printing numbers 0 to 9
  * Return: Always
  */
 
@@ -17,7 +15,7 @@ void print_numbers(void)
 
 	for (i = 0; i <= 10; i++)
 	{
-		_putchar(i);
+		_putchar((num % 10) + '0');
 	}
 	_putchar('\n')
 }
