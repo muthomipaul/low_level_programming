@@ -7,7 +7,6 @@
  * sqrt_check - Entry Point
  * @n: int n
  * @c: int c
- * @n: number n
  * _sqrt_recursion - finds square root
  * Return: Always
  */
@@ -21,7 +20,11 @@ int sqrt_check(int n, int c)
 		return (-1);
 	return (sqrt_check(n, c + 1));
 }
-
+/**
+ * _sqrt_recursion - finds square root
+ * @n: number n
+ * Return: Always
+ */
 int _sqrt_recursion(int n)
 {
 	if (n == 1)
