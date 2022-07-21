@@ -4,16 +4,17 @@
 #include "main.h"
 
 /**
- * _strlen_recursion - Entry Point
+ * _print_rev_recursion - Entry Point
  * @s: character s
  * Main function for concatenating two strings
  * Return: Always
  */
-int _strlen_recursion(char *s)
+void _print_rev_recursion(char *s)
 {
-	if (*s == '\0')
-		return (0);
+	if (*s != '\0')
+		_print_rev_recursion(s + 1);
 	else
-		return (1 + _strlen_recursion(s + 1));
+		return;
+	_putchar(*s);
 }
 
