@@ -6,32 +6,43 @@
 /**
  * is_prime_number - Entry Point
  * @n: int n
+ * @c: int c
+ * Return: Always
+ */
+int is_prime_number(unsigned int n, unsigned int c)
+{
+	if (n % c == 0)
+	{
+		if (n == c)
+		{
+			return (1);
+		} else
+		{
+			return (0);
+		}
+	}
+	return (0 + is_prime(n, c + 1));
+}
+
+/**
+ * is_prime_number - checks for prime number
+ * @n: int n
  * Return: Always
  */
 int is_prime_number(int n)
 {
-	int result = prime_checker(n, n / 2);
-
-	if (n <= 1)
+	if (n == 0)
+	{
 		return (0);
-	else if (result > 0)
-		return (1);
-	return (0);
-}
-
-/**
- * prime_checker - checks for prime number
- * @n: int n
- * @i: int i
- * Return: Always
- */
-int prime_checker(int n, int i)
-{
-	if (i == 1)
-		return (1);
-	if (n % i == 0)
+	}
+	if (n < 0)
+	{
 		return (0);
-	else
-		return (prime_checker(n, i - 1));
+	}
+	if (n == 1)
+	{
+		return (0);
+	}
+	return (is_prime(n, 2));
 }
 
