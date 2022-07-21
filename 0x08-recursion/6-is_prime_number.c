@@ -10,9 +10,11 @@
  */
 int is_prime_number(int n)
 {
+	int result = prime_checker(n, n / 2);
+
 	if (n <= 1)
 		return (0);
-	else if (prime_checker(n, n / 2) > 0)
+	else if (result > 0)
 		return (1);
 	return (0);
 }
