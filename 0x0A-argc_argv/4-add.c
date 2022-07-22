@@ -4,9 +4,8 @@
 #include "main.h"
 
 /**
- * main - Entry Point
- * @argc: int argc argv
- * @argv: char
+ * isInteger - Entry Point
+ * @s: char s
  * main function
  * Return: Always
  */
@@ -24,9 +23,9 @@ return (0);
 
 /**
  * main - adds positive numbers
- * @argc: int
- * @argv: list
- * Return: 0
+ * @argc: int argc
+ * @argv: list argv
+ * Return: always
  */
 
 int main(int argc, char const *argv[])
