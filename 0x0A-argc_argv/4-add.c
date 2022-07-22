@@ -10,26 +10,40 @@
  * main function
  * Return: Always
  */
-int main(int argc, char *argv[])
+int isInteger(const char *s)
 {
-	int a = 0, i, j;
+int i = 0;
+while (s[i] != '\0')
+{
+	if (s[i] < '0' || s[i] > '9')
+		return (1);
+	i++;
+}
+return (0);
+}
 
-	for (i = 1; i < argc; i++)
+/**
+ * main - adds positive numbers
+ * @argc: int
+ * @argv: list
+ * Return: 0
+ */
+
+int main(int argc, char const *argv[])
+{
+int sum = 0;
+while (--argc)
+{
+	if (isInteger(argv[argc]))
 	{
-		for (j = 0; argv[i][j]; j++)
-		{
-			if (isdigit(argv[i][j]) == 0)
-			{
-				puts("Error");
-				return (1);
-			}
-		}
+		printf("Error\n");
+		return (1);
 	}
-	for (i = 1; i < argc; i++)
-	{
-		a += atoi(argv[i]);
-	}
-	printf("%d\n", a);
-	return (0);
+	sum += atoi(argv[argc]);
+}
+
+printf("%i\n", sum);
+
+return (0);
 }
 
