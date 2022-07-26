@@ -6,30 +6,27 @@
 /**
  * _strdup - Entry Point
  * @str: char str
- * 
+ *
  * Return: Always
  */
 char *_strdup(char *str)
 {
-	int i, j;
-	char *dup;
+	int i = 1, j = 0;
+	char *s;
 
-	dup = (char *) malloc((i + 1) * sizeof(char));
 	if (str == NULL)
+		return (NULL);
+	while (str[i])
+		i++;
+	s = (char *)malloc(i * sizeof(char) + 1);
+	if (s == NULL)
+		return (NULL);
+	while (j < i)
 	{
-		return (str);
+		s[j] = str[j];
+		j++;
 	}
-	for (i = 0; str[i]; ++i)
-		;
-	dup = (char *) malloc((i + 1) * sizeof(char));
-	if (dup == NULL)
-	{
-		return (dup);
-	}
-	for (j = 0; j <= i; ++j)
-	{
-		dup[j] = str[j];
-	}
-	return (dup);
+	s[j] = '\0';
+	return (s);
 }
 
