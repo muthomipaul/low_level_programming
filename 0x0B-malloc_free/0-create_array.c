@@ -24,5 +24,6 @@ char *create_array(unsigned int size, char c)
 	{
 		block[i] = c;
 	}
+	return (block);
 }
 
