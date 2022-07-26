@@ -4,6 +4,25 @@
 #include "main.h"
 
 /**
+ * _strlen - Entry Point
+ * @s: char s
+ *
+ * Return: Always
+ */
+int _strlen(char *s)
+{
+	unsigned int i;
+
+	i = 0;
+	while (s[i] != '\0') /*Count character of string*/
+	{
+		i++;
+	}
+
+	return (i);
+}
+
+/**
  * str_concat - Entry Point
  * @s1: char s1
  * @s2: char s2
@@ -12,26 +31,37 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *new_str;
-	int i, len, _len;
+	char *dst;
+	unsigned int i, j, size;
 
-	if (!s1)
+	/*If the array is empty*/
+	if (s1 == NULL)
 		s1 = "";
 
-	if (!s2)
+	if (s2 == NULL)
 		s2 = "";
 
-	len = strlen(s1);
-	_len = strlen(s2);
+	/*count size total*/
+	size = (_strlen(s1) + _strlen(s2) + 1);
 
-	new_str = malloc(sizeof(char) * (len + _len + 1));
+	/*malloc*/
+	dst = (char *) malloc(size * sizeof(char));
 
-	if (!new_str)
+	if (dst == 0)
+	{
 		return (NULL);
+	}
 
-	for (i = 0; i <= len + _len; i++)
-		new_str[i] = i < len ? s1[i] : s2[i - len];
+	/*Concatenate arrays*/
+	for (i = 0; *(s1 + i) != '\0'; i++)
+		*(dst + i) = *(s1 + i);
 
-	return (new_str);
+	for (j = 0; *(s2 + j) != '\0'; j++)
+	{
+		*(dst + i) = *(s2 + j);
+		i++;
+	}
+
+	return (dst);
 }
 
