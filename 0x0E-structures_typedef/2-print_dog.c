@@ -3,17 +3,18 @@
 #include <stdio.h>
 #include "dog.h"
 /**
- * main - Entry Point
+ * print_dog - Entry Point
+ * @d: dog d
  * Return: Always
  */
-int main(void)
+void print_dog(struct dog *d)
 {
-	struct dog my_dog;
-
-	my_dog.name = "Dylan";
-	my_dog.age = 5;
-	my_dog.owner = "Paula";
-	print_dog(&my_dog);
-	return (0);
+	if (d != NULL)
+	{
+		printf("Name: %s\nAge: %f\nOwner: %s\n",
+		(*d).name != NULL ? d->name : "(nil)",
+		(*d).age,
+	(*d).owner != NULL ? d->owner : "(nil)");
+	}
 }
 
