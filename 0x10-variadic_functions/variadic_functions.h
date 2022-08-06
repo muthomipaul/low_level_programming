@@ -13,10 +13,16 @@ void print_float(va_list list);
 void print_char(va_list list);
 void print_str(va_list list);
 
+/**
+ * struct printTypeStruct - Entry Point
+ * @type: char type
+ * @printer: int printer
+ * Return: Always
+ */
 typedef struct printTypeStruct
 {
-        char *type;
-        void (*printer)(va_list);
+	char *type;
+	void (*printer)(va_list);
 } printTypeStruct;
 #endif
 
