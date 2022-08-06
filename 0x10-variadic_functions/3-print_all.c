@@ -5,58 +5,47 @@
 
 /**
  * print_char - Entry Point
- * @arg: argument
+ * @list: list
  * Return: Always
  */
-void print_char(va_list arg)
+void print_char(va_list list)
 {
-	char c = va_arg(arg, int);
-
-	printf("%c", c);
+	printf("%c", va_arg(list, int));
 }
-
 /**
  * print_int - Entry Point
- * @arg: argument
+ * @list: list
  * Return: Always
  */
 
-void print_int(va_list arg)
+void print_int(va_list list)
 {
-	int n = va_arg(arg, int);
-
-	printf("%d", n);
+	printf("%d", va_arg(list, int));
 }
 
 /**
  * print_float - Entry Point
- * @arg: argument
+ * @list: list
  * Return: Always
  */
 
-void print_float(va_list arg)
+void print_float(va_list list)
 {
-	float n = va_arg(arg, double);
-
-	printf("%f", n);
+	printf("%f", va_arg(list, double));
 }
 
 /**
- * print_string - Entry Point
- * @arg: argument
+ * print_str - Entry Point
+ * @list: list
  * Return: Always
  */
 
-void print_string(va_list arg)
+void print_str(va_list list)
 {
-	char *str = va_arg(arg, char *);
+	char *s = va_arg(list, char *);
 
-	if (str == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
-	printf("%s", str);
+	s == NULL ? printf("(nil)") : printf("%s", s);
+
 }
 
 /**
@@ -67,33 +56,39 @@ void print_string(va_list arg)
 
 void print_all(const char * const format, ...)
 {
-	va_list ap;
+	va_list list;
 	int i = 0, j = 0;
-	char *separator = "";
-	func_printer funcs[] = {
-		{"c", print_char},
-		{"i", print_int},
-		{"f", print_float},
-		{"s", print_string}
+	char *sep = "";
+
+	printTypeStruct printType[] = {
+		{ "i", print_int },
+		{ "f", print_float },
+		{ "c", print_char },
+		{ "s", print_str },
+		{NULL, NULL}
 	};
 
-	va_start(ap, format);
-
+	va_start(list, format);
 	while (format && format[i])
 	{
 		j = 0;
-		while (j < 4 && (format[i] != *(funcs[j].symbol)))
-			j++;
-		if (j < 4)
+		while (j < 4)
 		{
-			printf("%s", separator);
-			funcs[j].print_func(ap);
-			separator = ", ";
+			if (*printType[j].type == format[i])
+			{
+				printf("%s", sep);
+				printType[j].printer(list);
+				sep = ", ";
+				break;
+			}
+			j++;
 		}
 		i++;
 	}
-	printf("\n");
 
-	va_end(ap);
+	printf("\n");
+	va_end(list);
 }
+
+
 
