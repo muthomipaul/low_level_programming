@@ -3,23 +3,6 @@
 #include <stdio.h>
 #include "main.h"
 
-
-/**
- * _strlen - Entry Point
- * @s: char s
- *
- * Return: Always
- */
-int _strlen(const char *s)
-{
-	int i = 0;
-
-	while (s[i])
-		i++;
-
-	return (i);
-}
-
 /**
  * binary_to_uint - Entry Point
  * @b: char b
@@ -28,22 +11,30 @@ int _strlen(const char *s)
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int n = 0;
-	int i, len;
+	int length, i, add;
 
-	if (b == NULL)
-		return (0);
+	add = 0;
 
-	len = _strlen(b);
-
-	for (i = 0; i != len; i++)
+	if (b != NULL)
 	{
-		if (b[len - i - 1] == '1')
-			n += 1 << i;
-		else if (b[len - i - 1] != '0')
-			return (0);
-	}
+		for (length = 0; b[length] != '\0'; length++)
+		{
+			if (b[length] != 48 && b[length] != 49)
+			{
+				return (0);
+			}
+		}
 
-	return (n);
+		for (i = 0, length--; length >= 0; length--)
+		{
+			add = add + ((b[length] - '0') << i);
+			i++;
+		}
+	}
+	else
+	{
+		return (0);
+	}
+	return (add);
 }
 
