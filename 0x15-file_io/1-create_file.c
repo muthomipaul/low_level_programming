@@ -4,7 +4,7 @@
 #include "main.h"
 
 /**
- * read_textfile - Entry Point
+ * create_file - Entry Point
  * @filename: char filename
  * @text_content: char text_content
  *
